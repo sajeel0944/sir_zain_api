@@ -112,7 +112,7 @@ class UserPrompt(BaseModel):
 
 @app.get("/")
 def user_get():
-    return save_response
+    return {save_response}
 
 @app.post("/push")
 def ai_prompt(request: UserPrompt):  # Use request body
