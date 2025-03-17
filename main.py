@@ -115,7 +115,7 @@ def user_get():
     return {save_response}
 
 @app.post("/push")
-def ai_prompt(request: UserPrompt):  # Use request body
+async def ai_prompt(request: UserPrompt):  # Use async for FastAPI
     try:
         load_dotenv()
         api_token = os.getenv("API_KEY_TOKEN")
@@ -136,7 +136,6 @@ def ai_prompt(request: UserPrompt):  # Use request body
 
         response = model.generate_content(prompt)
 
-        # ✅ Check if response exists and extract correctly
         if response and response.candidates:
             ai_answer = response.candidates[0].content.parts[0].text if response.candidates[0].content.parts else "No response"
             save_response.append({"role": "user", "message": request.user_prompt})
