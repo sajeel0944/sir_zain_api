@@ -22,7 +22,6 @@ def ai_prompt(user_prompt):
         load_dotenv()
 
         api_token = os.getenv("API_KEY_TOKEN")
-        print(api_token,"huuhuygg")
         # with print("Generating response... Please wait"):  # jab tak AI ka response nhi aye
         API_KEY_TOKEN = api_token
         genai.configure(api_key=API_KEY_TOKEN)
