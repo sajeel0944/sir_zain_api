@@ -110,7 +110,7 @@ save_response = []
 class UserPrompt(BaseModel):
     user_prompt: str
 
-@app.get("/user")
+@app.get("/")
 def user_get():
     return save_response
 
