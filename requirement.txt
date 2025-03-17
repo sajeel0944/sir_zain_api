@@ -1,4 +1,3 @@
 fastapi[standard]
 google.generativeai
 python-dotenv
-dotenv
